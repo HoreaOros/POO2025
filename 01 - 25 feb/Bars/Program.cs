@@ -15,4 +15,23 @@ Console.WriteLine(f.Height);
 Console.WriteLine(f.Width);
 
 
+Ladder ladd = new Ladder(6, 3, 5);
+//+------+
+//|
+//|
+//|
+//+------+
+//|
+//|
+//|
+//|
+//|
+//+------+
+//|
+//|
+//|
+//+------+
+
+
+
 

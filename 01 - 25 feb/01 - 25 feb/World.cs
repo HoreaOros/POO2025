@@ -1,13 +1,20 @@
 ﻿public class World
 {
     // metoda constructor implicit
-    public World()
+    public World(): this("()")
     {
-        Console.WriteLine("World created");
     }
+
+    public World(string id)
+    {
+        Id = id;
+        Console.WriteLine($"World with id {Id} created");
+    }
+
+    public string Id { get; }
 
     public void SayHello()
     {
-        Console.WriteLine("Hello World!");
+        Console.WriteLine($"Hello World! from {Id}");
     }
 }

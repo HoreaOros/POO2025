@@ -5,7 +5,9 @@ VisualStudioVersion = 17.7.34031.279
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hello World", "01 - 25 feb\Hello World.csproj", "{CE94D7DD-5C2A-4FC3-8ACB-90108DDC9A04}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bars", "Bars\Bars.csproj", "{0B8254EA-E1B4-4BF5-A220-E815794ABD74}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Bars", "Bars\Bars.csproj", "{0B8254EA-E1B4-4BF5-A220-E815794ABD74}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Point", "Point\Point.csproj", "{7820491B-DA73-434F-B2B9-3A677D579815}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0B8254EA-E1B4-4BF5-A220-E815794ABD74}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B8254EA-E1B4-4BF5-A220-E815794ABD74}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B8254EA-E1B4-4BF5-A220-E815794ABD74}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7820491B-DA73-434F-B2B9-3A677D579815}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7820491B-DA73-434F-B2B9-3A677D579815}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7820491B-DA73-434F-B2B9-3A677D579815}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7820491B-DA73-434F-B2B9-3A677D579815}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

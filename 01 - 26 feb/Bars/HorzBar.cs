@@ -1,6 +1,13 @@
 ﻿internal class HorzBar
 {
     private int length;
+    public int Length
+    { 
+        get
+        {
+            return length;
+        }
+    }
 
     public HorzBar(int length)
     {

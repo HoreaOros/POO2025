@@ -1,6 +1,7 @@
-﻿using System.Text;
+﻿using System;
+using System.Text;
 
-internal class Complex
+internal class Complex: IEquatable<Complex>
 {
     #region Fields
     private double re;
@@ -20,6 +21,10 @@ internal class Complex
     #endregion
 
     #region Methods
+    public override bool Equals(object? obj)
+    {
+        return this.Equals(obj as Complex);
+    }
     public override string ToString()
     {
         StringBuilder sb = new StringBuilder();
@@ -36,7 +41,7 @@ internal class Complex
         return sb.ToString();
     }
 
-    public Complex Add(Complex c2)
+    private Complex Add(Complex c2)
     {
         return new Complex(re + c2.re, im + c2.im);
     }
@@ -53,6 +58,29 @@ internal class Complex
 
         //return new Complex(re * c2.re - im * c2.im, re * c2.im + im * c2.re);
     }
+
+    public bool Equals(Complex? other)
+    {
+        if (other is null)
+        {
+            return false;
+        }
+        // Optimization for a common success case.
+        if (Object.ReferenceEquals(this, other))
+        {
+            return true;
+        }
+
+        // If run - time types are not exactly the same, return false.
+        if (this.GetType() != other.GetType())
+        {
+            return false;
+        }
+        // Return true if the fields match.
+        // Note that the base class is not invoked because it is
+        // System.Object, which defines Equals as reference equality.
+        return (this.re == other.re) && (this.im == other.im);
+    }
     #endregion
 
     #region Properties
@@ -60,8 +88,20 @@ internal class Complex
     {
         get
         {
-            return Math.Abs(Math.Pow(re, 2) + Math.Pow(im, 2));
+            return Math.Sqrt(Math.Pow(re, 2) + Math.Pow(im, 2));
         }
     }
+    public double Argument => Math.Atan2(im, re);
+    #endregion
+
+    #region Operator overloads
+    public static Complex operator +(Complex a, Complex b)
+    {
+        return a.Add(b);
+    }
+    // TODO: 
+    // supraincarcarea operatorilor: -, *.
+
+
     #endregion
 }

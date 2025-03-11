@@ -137,6 +137,8 @@ namespace _03___11_mar
         }
         public static bool operator !=(Rational lhs, Rational rhs) => !(lhs == rhs);
         #endregion
+
+        // SortDescending
         private class SortDescending : IComparer<Rational>
         {
             public int Compare(Rational? x, Rational? y)

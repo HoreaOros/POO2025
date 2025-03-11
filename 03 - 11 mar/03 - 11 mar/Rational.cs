@@ -117,6 +117,8 @@ namespace _03___11_mar
             // Equals handles case of null on right side.
             return lhs.Equals(rhs);
         }
+
+        // Operatorii relationali
         public static bool operator <(Rational lhs, Rational rhs)
         {
             return lhs.CompareTo(rhs) < 0;  

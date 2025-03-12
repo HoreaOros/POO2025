@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Text;
 
-namespace _03___12_mar
+namespace RationalNS
 {
     public class Rational
     {
@@ -14,16 +15,30 @@ namespace _03___12_mar
 
 
         #region Methods
-        public Rational()
+        public Rational(): this(0, 1)
         {
             
         }
+
+        public Rational(int numarator, int numitor)
+        {
+            this.numarator = numarator;
+            this.numitor = numitor;
+            this.numarator /= Utility.Util.Gcd(numarator, numitor);
+            this.numitor /= Utility.Util.Gcd(numarator, numitor);
+        }
+
         /// <summary>
         /// Aduna doua numere rationale
         /// </summary>
         public Rational Add(Rational other)
         {
             throw new System.NotImplementedException();
+        }
+
+        public override string ToString()
+        {
+            return $"[{numarator} / {numitor}]";
         }
         #endregion
 

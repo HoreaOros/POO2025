@@ -97,7 +97,6 @@ namespace RationalNS
         {
             return !(r1==r2);
         }
-
         #endregion
 
         #region Properties

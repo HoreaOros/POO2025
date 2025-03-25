@@ -29,7 +29,7 @@ namespace Tests
             MyStack stack = new MyStack();
 
             // Act
-            stack.Push(1); 
+            stack.Push(1);
             stack.Push(2);
             stack.Push(3);
 
@@ -49,7 +49,7 @@ namespace Tests
             for (int i = 0; i < 10; i++)
             {
                 stack.Push(i);
-            }   
+            }
 
 
             // Assert
@@ -73,7 +73,13 @@ namespace Tests
 
             // Assert
             Assert.AreEqual(expected, actual);
-            
+
         }
+
+       
+
+      
+
+       
     }
 }

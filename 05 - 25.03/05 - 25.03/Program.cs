@@ -1,4 +1,6 @@
-﻿Stack<int> st = new Stack<int>();
+﻿using System.Diagnostics;
+
+Stack<int> st = new Stack<int>();
 
 for (int i = 0; i < 10; i++)
 {
@@ -7,7 +9,7 @@ for (int i = 0; i < 10; i++)
 
 //Console.WriteLine($"Stiva contine {st.Count} elemente");
 
-//while(st.Count > 0)
+//while (st.Count > 0)
 //{
 //    Console.WriteLine(st.Pop());
 //}
@@ -19,6 +21,7 @@ MyStack<int> intStack = new MyStack<int>();
 intStack.Push(0);
 intStack.Push(1);
 intStack.Push(2);
+
 MyStack<string> stringStack = new MyStack<string>();
 
 

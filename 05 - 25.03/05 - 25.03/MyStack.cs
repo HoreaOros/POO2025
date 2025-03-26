@@ -1,10 +1,13 @@
 ﻿
 public class MyStack
 {
+    #region Fields
     private int[] _stack;
-    private int _count;
-    private int _capacity;
+    private int _count; // numarul de elemente din stiva 
+    private int _capacity; // numarul total de elemente care incap in stiva
+    #endregion
 
+    #region Constructors
     public MyStack(): this(8)
     {
         
@@ -15,6 +18,9 @@ public class MyStack
         _capacity = capacity;
         _stack = new int[_capacity];
     }
+    #endregion
+
+    #region Methods
     public void Push(int value)
     {
         if(_count == _capacity)
@@ -24,19 +30,6 @@ public class MyStack
         _stack[_count] = value;
         _count++;
     }
-
-    private void resize(int newCapacity)
-    {
-        int[] newStack = new int[newCapacity];
-        //Array.Copy(_stack, newStack, _count);
-        for (int i = 0; i < _count; i++)
-        {
-            newStack[i] = _stack[i];
-        }
-        _stack = newStack;
-        _capacity = newCapacity;
-    }
-
     public int Pop()
     {
         if(_count == 0)
@@ -54,6 +47,21 @@ public class MyStack
         }
         return _stack[_count - 1];
     }
+
+    private void resize(int newCapacity)
+    {
+        int[] newStack = new int[newCapacity];
+        //Array.Copy(_stack, newStack, _count);
+        for (int i = 0; i < _count; i++)
+        {
+            newStack[i] = _stack[i];
+        }
+        _stack = newStack;
+        _capacity = newCapacity;
+    }
+    #endregion
+
+    #region Properties
     public int Count
     {
         get
@@ -63,4 +71,5 @@ public class MyStack
     }
 
     public int Capacity => _capacity;
+    #endregion
 }

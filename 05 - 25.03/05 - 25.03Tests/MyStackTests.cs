@@ -10,18 +10,7 @@ namespace Tests
     [TestClass()]
     public class MyStackTests
     {
-        [TestMethod()]
-        public void MyStackTest()
-        {
-            Assert.Fail();
-        }
-
-        [TestMethod()]
-        public void MyStackTest1()
-        {
-            Assert.Fail();
-        }
-
+      
         [TestMethod()]
         public void PushTest()
         {

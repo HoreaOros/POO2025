@@ -42,6 +42,7 @@ namespace _06___01._04._2025
             }
             T item = _data[_back];
             _back = (_back + 1) % _capacity;
+            _count--;
             return item;
         }
 
@@ -66,6 +67,7 @@ namespace _06___01._04._2025
             _data = newData;
             _back = 0;
             _front = _count;
+            _capacity = newCapacity;
         }
 
         #endregion

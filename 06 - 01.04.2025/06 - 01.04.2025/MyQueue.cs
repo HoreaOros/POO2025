@@ -36,12 +36,36 @@ namespace _06___01._04._2025
         #region Methods
         public T Dequeue()
         {
-            throw new NotImplementedException();
+            if(_count == 0)
+            {
+                throw new InvalidOperationException("Queue is empty");
+            }
+            T item = _data[_back];
+            _back = (_back + 1) % _capacity;
+            return item;
         }
 
         public void Enqueue(T item)
         {
-            throw new NotImplementedException();
+            if(_count == _capacity)
+            {
+                Resize(2 * _capacity);
+            }
+            _data[_front] = item;
+            _front = (_front + 1) % _capacity;
+            _count++;
+        }
+
+        private void Resize(int newCapacity)
+        {
+            T[] newData = new T[newCapacity];
+            for (int i = 0; i < _count; i++)
+            {
+                newData[i] = _data[(_back + i) % _capacity];
+            }
+            _data = newData;
+            _back = 0;
+            _front = _count;
         }
 
         #endregion

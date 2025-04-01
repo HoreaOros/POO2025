@@ -72,6 +72,22 @@ namespace _06___01._04._2025
 
         #endregion
 
+        #region Overrides
+        override public string ToString()
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("[");
+            sb.Append($"Count: {Count}, ");
+            for (int i = 0; i < _count; i++)
+            {
+                sb.Append(_data[(_back + i) % _capacity].ToString() + " ");
+            }
 
+            sb.Append("]");
+
+            return sb.ToString().Trim();   
+        }
+
+        #endregion
     }
 }

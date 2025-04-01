@@ -22,18 +22,24 @@ namespace _06___01._04._2025.Tests
             {
                 Q.Enqueue(i);
             }
+            Console.WriteLine(Q);
             for(int i = 1; i <= 3; i++)
             {
                 Console.WriteLine(Q.Dequeue());
             }
+            Console.WriteLine(Q);
+
             for (int i = 6; i < 16; i++)
             {
                 Q.Enqueue(i);
             }
+            Console.WriteLine(Q);
+
             for (int i = 1; i <= 10; i++)
             {
                 Console.WriteLine(Q.Dequeue());
             }
+            Console.WriteLine(Q);
 
             // Assert
             Assert.AreEqual(2, Q.Count);

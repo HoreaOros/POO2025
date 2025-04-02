@@ -22,7 +22,15 @@ namespace _06___01._04._2025.Tests
             {
                 q.Enqueue(i);
             }
+            for (int i = 1; i <= 10; i++)
+            {
+                q.Dequeue();
+            }
             Console.WriteLine(q);
+
+            // Assert
+
+            Assert.AreEqual(10, q.Count);
         }
 
         [TestMethod()]

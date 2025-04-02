@@ -10,7 +10,7 @@ namespace _06___01._04._2025
     public class MyQueue<T>: IQueue<T>
     {
         #region Fields
-        private T[] _data;
+        private T?[] _data;
         private int _count;
         private int _capacity;
         private int _front = 0, _back = 0;
@@ -34,7 +34,7 @@ namespace _06___01._04._2025
         public int Count => _count;
         #endregion
         #region Methods
-        public T Dequeue()
+        public T? Dequeue()
         {
             if(_count == 0)
             {
@@ -46,7 +46,7 @@ namespace _06___01._04._2025
             return item;
         }
 
-        public void Enqueue(T item)
+        public void Enqueue(T? item)
         {
             if(_count == _capacity)
             {

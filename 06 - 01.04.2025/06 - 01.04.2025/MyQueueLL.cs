@@ -12,11 +12,11 @@ namespace _06___01._04._2025
         private int _count = 0;
         public int Count => _count;
 
-        Node front = null;
-        Node back = null;
+        Node? front = null;
+        Node? back = null;
 
         #region Methods
-        public T Dequeue()
+        public T? Dequeue()
         {
             if(Count == 0)
             {
@@ -24,12 +24,15 @@ namespace _06___01._04._2025
             }
             T item = back.Value;
             back = back.Next;
-            back.Prev = null;
+            if(back != null) 
+                back.Prev = null;
+            else
+                front = null;
             _count--; 
             return item;
         }
 
-        public void Enqueue(T item)
+        public void Enqueue(T? item)
         {
             Node node = new Node()
             {
@@ -43,7 +46,8 @@ namespace _06___01._04._2025
             }
             else
             {
-                front.Next = node;
+                if(front != null)
+                    front.Next = node;
             }
             front = node;
             _count++;
@@ -52,7 +56,7 @@ namespace _06___01._04._2025
         public override string ToString()
         {
             StringBuilder sb = new StringBuilder();
-            Node current = back;
+            Node? current = back;
             sb.Append("[");
             sb.Append($"Count: {Count}, ");
             while (current != null)
@@ -65,9 +69,9 @@ namespace _06___01._04._2025
         }
         private class Node
         {
-            public T Value { get; set; }
-            public Node Next { get; set; }
-            public Node Prev { get; set; }
+            public T? Value { get; set; }
+            public Node? Next { get; set; }
+            public Node? Prev { get; set; }
         }
     }
 }

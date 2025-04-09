@@ -13,10 +13,10 @@ foreach (var item in maxHeap)
     Console.WriteLine(item);
 }
 
-//maxHeap.HeapSort();
-//Console.WriteLine("After HeapSort");
-//Console.WriteLine(maxHeap);
+maxHeap.HeapSort();
+Console.WriteLine("After HeapSort");
+Console.WriteLine(maxHeap);
 
-maxHeap.HeapInsert(12);
-Console.WriteLine($"After HeapInsert: {maxHeap}");
+//maxHeap.HeapInsert(12);
+//Console.WriteLine($"After HeapInsert: {maxHeap}");
 

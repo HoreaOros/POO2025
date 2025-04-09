@@ -62,11 +62,11 @@ public class MaxHeap<T>:IEnumerable<T>  where T : IComparable<T>
     }
 
     public IEnumerator<T> GetEnumerator()
-    {
-        for (int i = 1; i <= HeapSize; i++)
+    { for (int i = 1; i <= HeapSize; i++)
         {
-            yield return data[i];
+            yield return data[i]; 
         }
+       
     }
 
     IEnumerator IEnumerable.GetEnumerator()
@@ -77,7 +77,7 @@ public class MaxHeap<T>:IEnumerable<T>  where T : IComparable<T>
 
     public override string ToString()
     {
-        return "[" + string.Join(", ", data[1..(HeapSize + 1)]) + "]";
+        return "[" + string.Join(", ", data[1..(data.Length)]) + "]";
     }
     public void HeapSort()
     {

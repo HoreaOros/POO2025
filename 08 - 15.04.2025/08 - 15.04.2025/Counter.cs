@@ -4,11 +4,12 @@ public class Counter
 {
     #region Fields
     protected int _count = 0;
-    private int _step = 1;
+    protected int _step = 1;
     #endregion
 
     #region Properties
     public int Count => _count; 
+    public int Step => _step; 
     #endregion
 
     #region Constructors

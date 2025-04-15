@@ -27,7 +27,12 @@ public class ModularCounter: Counter
     }
 
 
-
+    /// <summary>
+    /// Constructs a ModularCounter with the specified modulus, count, and step.
+    /// </summary>
+    /// <param name="modulus">Modulus</param>
+    /// <param name="count">Initial value of counter</param>
+    /// <param name="step">Step used by the counter</param>
     public ModularCounter(int modulus, int count, int step) : base(count, step)
     {
         _modulus = modulus;
@@ -40,6 +45,11 @@ public class ModularCounter: Counter
         base.Tick();
         if (Count >= _modulus)
             _count = _count % Modulus;
+    }
+
+    public override string ToString()
+    {
+        return $"[Count: {Count}, Modulus: {Modulus}, Step: {Step}]";
     }
     #endregion
 }

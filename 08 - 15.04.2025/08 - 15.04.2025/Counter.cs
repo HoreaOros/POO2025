@@ -30,7 +30,11 @@ public class Counter
     #region Methods
     public virtual void Tick()
     {
-        _count += _step;
+        Tick(_step);
+    }
+    public virtual void Tick(int step)
+    {
+        _count += step;
     }
     public void Reset()
     {
@@ -43,7 +47,7 @@ public class Counter
 
     public override string ToString()
     {
-        return $"[Count: {_count}]";
+        return $"[Count: {_count}, Step: {_step}]";
     }
     #endregion
 

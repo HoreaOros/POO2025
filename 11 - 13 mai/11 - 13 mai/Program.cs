@@ -21,3 +21,9 @@ Circle circle = new Circle(new Point(3, 4), 42);
 Circle circle2 = new Circle();
 /*******************************/
 
+circle.Color = Color.Yellow;
+
+
+Shape shape = new Circle(new Point(3, 4), 42);
+shape.Color = Color.Red;
+

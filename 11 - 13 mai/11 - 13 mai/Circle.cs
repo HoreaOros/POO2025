@@ -1,4 +1,4 @@
-﻿public class Circle
+﻿public class Circle: Shape
 {
     #region Fields
     private Point center;
@@ -18,6 +18,4 @@
         this.radius = radius;
     }
     #endregion
-
-
 }

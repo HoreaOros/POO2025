@@ -30,6 +30,7 @@ public abstract class Shape
     public Color Color
     {
         get { return color; }
+        set { color = value; }
     }
     #endregion
 

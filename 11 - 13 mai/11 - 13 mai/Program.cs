@@ -13,7 +13,11 @@ Console.WriteLine(p3);
 /**** Rectangle ***************************/
 Rectangle rectangle = new Rectangle(p1, p2);
 Rectangle rectangle2 = new Rectangle(p1, 5, 6);
+/*******************************/
 
 
+/**** Circle ***************************/
+Circle circle = new Circle(new Point(3, 4), 42);
+Circle circle2 = new Circle();
 /*******************************/
 

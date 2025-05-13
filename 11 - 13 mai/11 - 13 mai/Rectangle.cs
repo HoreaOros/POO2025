@@ -1,4 +1,4 @@
-﻿public class Rectangle
+﻿public class Rectangle: Shape
 {
     #region Fields
     private Point p1;
@@ -50,6 +50,18 @@
             return new Point( Math.Min(p1.X, p2.X),
                               Math.Min(p1.Y, p2.Y)); 
         }
+    }
+    #endregion
+
+    #region Methods
+    public override double Area()
+    {
+        return Width * Height;
+    }
+
+    public override double Perimeter()
+    {
+        return 2 * (Width + Height);
     }
     #endregion
 }

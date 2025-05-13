@@ -63,5 +63,15 @@
     {
         return 2 * (Width + Height);
     }
+
+    public override void Draw()
+    {
+        Console.WriteLine($"Drawing {this.GetType().Name} {this.ToString()}");
+    }
+
+    public override string ToString()
+    {
+        return $"[Origin: {Origin.ToString()}, Width: {Width}, Height: {Height}]";
+    }
     #endregion
 }

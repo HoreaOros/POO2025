@@ -37,5 +37,6 @@ public abstract class Shape
     #region Methods
     public abstract double Area();
     public abstract double Perimeter();
+    public abstract void Draw();
     #endregion
 }

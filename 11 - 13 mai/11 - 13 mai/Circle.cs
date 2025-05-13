@@ -5,6 +5,17 @@
     private double radius;
     #endregion
 
+    #region Properties
+    public Point Center
+    {
+        get { return center; }
+    }
+    public double Radius
+    {
+        get { return radius; }
+    }
+    #endregion
+
     #region Constructors
     public Circle()
     {
@@ -28,6 +39,16 @@
     public override double Perimeter()
     {
         return 2 * Math.PI * radius;
+    }
+
+    public override void Draw()
+    {
+        Console.WriteLine($"Drawing {this.GetType().Name} {this.ToString()}");
+    }
+
+    public override string ToString()
+    {
+        return $"[Origin: {Center.ToString()}, Radius: {Radius}]";
     }
     #endregion
 }

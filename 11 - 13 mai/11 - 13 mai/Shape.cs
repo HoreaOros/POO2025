@@ -37,6 +37,9 @@ public abstract class Shape
     #region Methods
     public abstract double Area();
     public abstract double Perimeter();
-    public abstract void Draw();
+    public void Draw()
+    {
+        Console.WriteLine($"Drawing {this.GetType().Name} {this.ToString()}");
+    }
     #endregion
 }

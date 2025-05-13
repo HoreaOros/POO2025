@@ -41,10 +41,7 @@
         return 2 * Math.PI * radius;
     }
 
-    public override void Draw()
-    {
-        Console.WriteLine($"Drawing {this.GetType().Name} {this.ToString()}");
-    }
+
 
     public override string ToString()
     {

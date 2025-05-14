@@ -20,7 +20,7 @@
     public Circle(): this(new Point(), 0.0)
     {
     }
-
+    
     public Circle(Point center, double radius)
     {
         this.center = center;
@@ -39,11 +39,9 @@
         return 2 * Math.PI * radius;
     }
 
-
-
     public override string ToString()
     {
-        return $"[Origin: {Center.ToString()}, Radius: {Radius}]";
+        return $"[Origin: {Center}, Radius: {Radius}]";
     }
     #endregion
 }

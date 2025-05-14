@@ -17,7 +17,7 @@
     #endregion
 
     #region Constructors
-    public Circle()
+    public Circle(): this(new Point(), 0.0)
     {
         this.center = new Point();
         this.radius = 0.0;

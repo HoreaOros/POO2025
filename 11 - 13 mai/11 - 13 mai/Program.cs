@@ -27,7 +27,8 @@ circle.Color = Color.Yellow;
 Shape shape = new Circle(new Point(3, 4), 42);
 shape.Color = Color.Red;
 
-//Console.SetCursorPosition(Console.WindowWidth / 2, Console.WindowHeight  / 2);
+
+//Console.SetCursorPosition(Console.WindowWidth / 2, Console.WindowHeight / 2);
 //Console.ForegroundColor = ConsoleColor.Red;
 //Console.WriteLine("Hello World!");
 
@@ -39,18 +40,22 @@ for(int i = 0; i < 10; i++)
     switch(r)
     {
         case 0:
-            shapes.Add(new Circle(new Point(rnd.NextDouble() * 100, rnd.NextDouble() * 100), rnd.NextDouble() * 100));
+            shapes.Add(
+                new Circle(
+                    center: new Point(rnd.NextDouble() * 100, rnd.NextDouble() * 100), 
+                    radius: rnd.NextDouble() * 100));
             break;
         case 1:
             shapes.Add(new Rectangle(
-                new Point(rnd.Next(1, 20),
-                rnd.Next(1, 20)), 
-                rnd.NextDouble() * 100, 
-                rnd.NextDouble() * 100));
+                origin: new Point(rnd.Next(1, 20), rnd.Next(1, 20)), 
+                width: rnd.NextDouble() * 100, 
+                height: rnd.NextDouble() * 100));
             break;
     }
 }
 
 foreach(var item in shapes)
     item.Draw();
+
+Console.WriteLine($"Total area: {shapes.Sum(item => item.Area())}");
 

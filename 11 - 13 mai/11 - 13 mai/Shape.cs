@@ -16,10 +16,10 @@ public abstract class Shape
     #endregion
 
     #region Constructors
-    public Shape()
+    public Shape(): this(Color.Black)
     {
-        this.color = Color.Black;
     }
+    
     public Shape(Color color)
     {
         this.color = color;
@@ -39,7 +39,7 @@ public abstract class Shape
     public abstract double Perimeter();
     public void Draw()
     {
-        Console.WriteLine($"Drawing {this.GetType().Name} {this.ToString()}");
+        Console.WriteLine($"Drawing {this.GetType().Name} {this}");
     }
     #endregion
 }

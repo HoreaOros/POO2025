@@ -8,8 +8,8 @@
     #region Constructors
     public Rectangle(Point p1, Point p2) 
     {
-        this.p1 = p1;
-        this.p2 = p2;
+        this.p1 = (Point)(p1.Clone());
+        this.p2 = (Point)(p2.Clone());
     }
 
     public Rectangle()
@@ -20,7 +20,7 @@
 
     public Rectangle(Point origin, double width, double height)
     {
-        this.p1 = origin;
+        this.p1 = (Point)(origin.Clone());
         this.p2 = new Point(origin.X + width, origin.Y + height);
     }
     #endregion
@@ -68,7 +68,7 @@
 
     public override string ToString()
     {
-        return $"[Origin: {Origin.ToString()}, Width: {Width}, Height: {Height}]";
+        return $"[Origin: {Origin}, Width: {Width}, Height: {Height}]";
     }
     #endregion
 }

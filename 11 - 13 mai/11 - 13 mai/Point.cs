@@ -1,4 +1,4 @@
-﻿public class Point
+﻿public class Point: ICloneable
 {
     #region Fields
     private double x;
@@ -11,10 +11,8 @@
         this.x = x;
         this.y = y;
     }
-    public Point()
+    public Point(): this(0, 0)
     {
-        this.x = 0.0;
-        this.y = 0.0;
     }
     #endregion
 
@@ -31,11 +29,18 @@
     #region Methods
     public double DistanceTo(Point other)
     {
-        return Math.Sqrt(Math.Pow(other.X - this.X, 2) + Math.Pow(other.Y - this.Y, 2));
+        return Math.Sqrt(Math.Pow(other.X - this.X, 2) + 
+                         Math.Pow(other.Y - this.Y, 2));
     }
     public override string ToString()
     {
-        return "[" + X.ToString() + ", " + Y.ToString() + "]";
+        //return "[" + X.ToString() + ", " + Y.ToString() + "]";
+        return $"[{X}, {Y}]";
+    }
+
+    public object Clone()
+    {
+        return new Point(this.X, this.Y);
     }
     #endregion
 }

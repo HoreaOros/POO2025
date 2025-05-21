@@ -3,14 +3,14 @@
 
 public class Node<T> where T : IComparable<T>
 {
-    public T Data { get; set; }
-    public Tree<T> Left { get; set; }
-    public Tree<T> Right{ get; set; }
+    public T? Data { get; set; }
+    public Tree<T>? Left { get; set; }
+    public Tree<T>? Right{ get; set; }
 }
 
 public class Tree<T> where T : IComparable<T>
 {
-    Node<T> root = null;
+    Node<T>? root = null;
     public int Count 
     { 
         get
@@ -23,7 +23,7 @@ public class Tree<T> where T : IComparable<T>
         }
     }
 
-    private int CountRec(Tree<T> tree)
+    private int CountRec(Tree<T>? tree)
     {
         if(tree == null)
         {
@@ -31,7 +31,7 @@ public class Tree<T> where T : IComparable<T>
         }
         else
         {
-            return 1 + CountRec(tree.root.Left) + CountRec(tree.root.Right);
+            return 1 + CountRec(tree?.root?.Left) + CountRec(tree?.root?.Right);
         }
     }
 
@@ -54,7 +54,7 @@ public class Tree<T> where T : IComparable<T>
         }
     }
 
-    private Tree<T> AddRec(Tree<T> tree, Node<T> newNode)
+    private Tree<T>? AddRec(Tree<T>? tree, Node<T>? newNode)
     {
         if(tree == null)
         {
@@ -64,13 +64,15 @@ public class Tree<T> where T : IComparable<T>
         }
         else
         {
-            if (newNode.Data.CompareTo(tree.root.Data) < 0)
+            if (tree.root != null && newNode?.Data?.CompareTo(tree.root.Data) < 0)
             {
-                tree.root.Left = AddRec(tree.root.Left, newNode);
+                if(tree.root != null)
+                    tree.root.Left = AddRec(tree?.root?.Left, newNode);
             }
-            else if(newNode.Data.CompareTo(tree.root.Data) > 0)
+            else if(tree.root != null && newNode?.Data?.CompareTo(tree.root.Data) > 0)
             {
-                tree.root.Right = AddRec(tree.root.Right, newNode);
+                if (tree.root != null)
+                    tree.root.Right = AddRec(tree?.root?.Right, newNode);
             }
             else
             {
@@ -85,8 +87,8 @@ public class Tree<T> where T : IComparable<T>
         {
             return false;
         }
-        Tree<T> p = this;
-        while (p != null)
+        Tree<T>? p = this;
+        while (p != null && p.root != null)
         {
             if (value.CompareTo(p.root.Data) == 0)
             {
@@ -94,24 +96,24 @@ public class Tree<T> where T : IComparable<T>
             }
             else if (value.CompareTo(p.root.Data) < 0)
             {
-                p = p.root.Left;
+                p = p?.root?.Left;
             }
             else
             {
-                p = p.root.Right;
+                p = p?.root?.Right;
             }
         }
         return false;
     }
 
-    internal void InorderWalk()
+    public void InorderWalk()
     {
         InorderWalkHelper(this);
     }
 
-    private void InorderWalkHelper(Tree<T> tree)
+    private void InorderWalkHelper(Tree<T>? tree)
     {
-        if(tree != null)
+        if(tree != null && tree.root != null)
         {
             InorderWalkHelper(tree.root.Left);
             Console.WriteLine(tree.root.Data);

@@ -3,7 +3,7 @@ namespace BST
 {
     internal class BSTree : ITree
     {
-        public Node Root { get; set; } = null;
+        public Node? Root { get; set; } = null;
 
         public void Delete(Node node)
         {
@@ -15,7 +15,7 @@ namespace BST
             InorderTreeWalkHelper(Root);
         }
 
-        private void InorderTreeWalkHelper(Node p)
+        private void InorderTreeWalkHelper(Node? p)
         {
             if (p != null)
             {
@@ -25,10 +25,18 @@ namespace BST
             }
         }
 
-        public void Insert(Node node)
+        public void Insert(Node? node)
         {
-            Node y = null;
-            Node x = Root;
+            if (node == null)
+                return;
+            if(Root == null)
+            {
+                Root = node;
+                return;
+            }
+
+            Node? y = null;
+            Node? x = Root;
             while (x != null)
             {
                 y = x;
@@ -42,11 +50,11 @@ namespace BST
                     return;
                 }
             }
+
             node.Parent = y;
             node.Frequency = 1;
-            if (y == null)
-                Root = node;
-            else if (node.Key < y.Key)
+
+            if (node.Key < y.Key)
                 y.Left = node;
             else
                 y.Right = node;
@@ -57,7 +65,7 @@ namespace BST
             PostorderTreeWalkHelper(Root);
         }
 
-        private void PostorderTreeWalkHelper(Node p)
+        private void PostorderTreeWalkHelper(Node? p)
         {
             if (p != null)
             {
@@ -72,9 +80,9 @@ namespace BST
             throw new NotImplementedException();
         }
 
-        public Node Search(int key)
+        public Node? Search(int key)
         {
-            Node x = Root;
+            Node? x = Root;
             while (x != null && x.Key != key)
             {
                 if (key < x.Key)

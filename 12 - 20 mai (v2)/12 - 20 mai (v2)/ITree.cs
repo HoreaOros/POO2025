@@ -2,7 +2,7 @@
 {
     internal interface ITree
     {
-        Node Search(int key);
+        Node? Search(int key);
         void Insert(Node node);
         void Delete(Node node);
         void InorderTreeWalk();
